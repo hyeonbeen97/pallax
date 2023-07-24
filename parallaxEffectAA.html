@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>패럴랙스 효과</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Great Vibes', cursive;
+    }
+    body {
+        height: 20000px;
+        background-color: #E0E4DD;
+    }
+    .scrollTop {
+        position: fixed;
+        left: 10px;
+        top: 10px;
+        z-index: 1000;
+        width: 40px;
+        height: 40px;
+        color: #fff;
+        text-align: center;
+        font-size: 14px;
+        line-height: 40px;
+        background-color: rgba(0,0,0,0.6);
+    }
+    .fixed {
+        position: fixed;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 1;
+        
+    }
+    .s1-text1 {
+        font-size: 30vw;
+        line-height: 1;
+        padding-top: 8vw;
+        
+    }
+    .s1-text2 {
+        font-size: 0vw;
+        line-height: 1;
+        padding-top: 8vw;
+    }
+    .s1-img1 {
+        width: 200vw;
+        height: 100vh;
+    }
+
+
+    .s1-img1 > div {
+        height: 20vh;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .s1-img1 > div > div {
+        width: 19vh;
+        height: 19vh;
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        border: 5px solid #000;
+        filter: saturate(10%);
+    }
+    .s1-img1-1 > div:first-child { background-image: url(https://source.unsplash.com/500x500/?pink);}
+    .s1-img1-1 > div:last-child { background-image: url(https://source.unsplash.com/500x500/?violet);}
+    .s1-img1-2 > div:first-child { background-image: url(https://source.unsplash.com/500x500/?blue);}
+    .s1-img1-2 > div:last-child { background-image: url(https://source.unsplash.com/500x500/?yellow);}
+    .s1-img1-3 > div:first-child { background-image: url(https://source.unsplash.com/500x500/?black);}
+    .s1-img1-3 > div:last-child { background-image: url(https://source.unsplash.com/500x500/?white);}
+    .s1-img1-4 > div:first-child { background-image: url(https://source.unsplash.com/500x500/?green);}
+    .s1-img1-4 > div:last-child { background-image: url(https://source.unsplash.com/500x500/?flower);}
+    .s1-img1-5 > div:first-child { background-image: url(https://source.unsplash.com/500x500/?sky);}
+    .s1-img1-5 > div:last-child { background-image: url(https://source.unsplash.com/500x500/?car);}
+</style>
+</head>
+<body>
+    <div class="scrollTop"></div>
+
+    <section id="section1">
+        <div class="s1-text1 fixed" 
+            data-0="font-size: 0vw; opacity:1"
+            data-1000="font-size: 30vw; opacity: 1"
+            data-2000="font-size: 30vw; opacity: 1"
+            data-3000="font-size: 0vw;  opacity: 0"
+        >HYEONB</div>
+        <div class="s1-text2 fixed"
+            data-2500="font-size: 0vw; transform: translate(-50%,-50%) rotate(0deg)"
+            data-3000="font-size: 30vw; transform: translate(-50%,-50%)  rotate(720deg)"
+        >Hello</div>
+        <div class="s1-img1 fixed"
+            data3000="width: 200vw;"
+            data4000="width: 40vw"
+            >
+            <div class="s1-img1-1"
+            data3000="transform: rotate(180deg); "
+            data4000="transform: rotate(360deg);"
+            >
+                <div></div>
+                <div></div>
+            </div>
+            <div class="s1-img1-2"
+            data3500="transform: rotate(180deg); "
+            data4500="transform: rotate(360deg);"
+            >
+                <div></div>
+                <div></div>
+            </div>
+            <div class="s1-img1-3"
+            data4000="transform: rotate(180deg); "
+            data5000="transform: rotate(360deg);"
+            >
+                <div></div>
+                <div></div>
+            </div>
+            <div class="s1-img1-4"
+            data4500="transform: rotate(180deg); "
+            data5500="transform: rotate(360deg);"
+            >
+                <div></div>
+                <div></div>
+            </div>
+            <div class="s1-img1-5"
+            data5000="transform: rotate(180deg); "
+            data6000="transform: rotate(360deg);"
+            >
+                <div></div>
+                <div></div>
+            </div>
+
+        </div>
+    </section>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/skrollr/0.6.30/skrollr.min.js"></script>
+    <script type="text/javascript">
+        let s = skrollr.init();
+    </script>
+
+    <script>
+        window.addEventListener("scroll", () => {
+            let scrollTop = window.pageYOffset || window.scrollY;
+            document.querySelector(".scrollTop").innerText = parseInt(scrollTop);
+        });
+    </script>
+</body>
+</html>

@@ -1,4 +1,6 @@
-# pallax
+# PALLAX
+
+## 사용스택
 window.addEventListener("scroll", () => { ... }): 페이지 내에서 스크롤 이벤트를 감지하는 이벤트 리스너입니다. 스크롤이 발생할 때마다 해당 함수가 호출되며, scrollTop 변수에 현재 스크롤의 수직 위치를 저장합니다.
 
 let scrollTop = window.pageYOffset || window.scrollY || document.documentElement.scrollTop;: scrollTop 변수에 현재 스크롤 위치를 할당합니다. 이때, 크로스 브라우징을 고려하여 여러 프로퍼티(window.pageYOffset, window.scrollY, document.documentElement.scrollTop)를 사용하여 스크롤 위치를 얻어옵니다.
